@@ -1,0 +1,265 @@
+{
+  "version": "34.0.0",
+  "artifacts": {
+    "MonitorBaselineBucketsQuota.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "MonitorBaselineBucketsQuota.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "MonitorBaselineBucketsQuota": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://425845004253/us-west-2",
+      "properties": {
+        "templateFile": "MonitorBaselineBucketsQuota.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::425845004253:role/cdk-hnb659fds-deploy-role-425845004253-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::425845004253:role/cdk-hnb659fds-cfn-exec-role-425845004253-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-425845004253-us-west-2/b1dcd82308b205c6d0c96e0cba3e368efafae62e867f07706dededae197fcc6d.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "MonitorBaselineBucketsQuota.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::425845004253:role/cdk-hnb659fds-lookup-role-425845004253-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "MonitorBaselineBucketsQuota.assets"
+      ],
+      "metadata": {
+        "/MonitorBaselineBucketsQuota/MonitorBaselineBucketsQuota": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "When using NODEJS_LATEST the runtime version may change as new runtimes are released, this may affect the availability of packages shipped with the environment. Ensure that any external dependencies are available through layers or specify a specific runtime version. [ack: @aws-cdk/aws-lambda-nodejs:variableRuntimeExternals]"
+          }
+        ],
+        "/MonitorBaselineBucketsQuota/MonitorBaselineBucketsQuota/monitor/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MonitorBaselineBucketsQuotamonitorServiceRole0F336003"
+          }
+        ],
+        "/MonitorBaselineBucketsQuota/MonitorBaselineBucketsQuota/monitor/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MonitorBaselineBucketsQuotamonitorServiceRoleDefaultPolicyB332EE19"
+          }
+        ],
+        "/MonitorBaselineBucketsQuota/MonitorBaselineBucketsQuota/monitor/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MonitorBaselineBucketsQuotamonitorF07EE2C5"
+          }
+        ],
+        "/MonitorBaselineBucketsQuota/MonitorBaselineBucketsQuota/monitor/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MonitorBaselineBucketsQuotamonitorLogRetentionB641B1CF"
+          }
+        ],
+        "/MonitorBaselineBucketsQuota/MonitorBaselineBucketsQuota/rule/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MonitorBaselineBucketsQuotaruleB8AD175B"
+          }
+        ],
+        "/MonitorBaselineBucketsQuota/MonitorBaselineBucketsQuota/rule/AllowEventRuleMonitorBaselineBucketsQuotamonitor8162A738": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MonitorBaselineBucketsQuotaruleAllowEventRuleMonitorBaselineBucketsQuotamonitor8162A738AA9C3EF4"
+          }
+        ],
+        "/MonitorBaselineBucketsQuota/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB"
+          }
+        ],
+        "/MonitorBaselineBucketsQuota/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB"
+          }
+        ],
+        "/MonitorBaselineBucketsQuota/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A"
+          }
+        ],
+        "/MonitorBaselineBucketsQuota/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/MonitorBaselineBucketsQuota/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "MonitorBaselineBucketsQuota"
+    },
+    "HelperMonitorBaseline.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "HelperMonitorBaseline.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "HelperMonitorBaseline": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://425845004253/us-west-2",
+      "properties": {
+        "templateFile": "HelperMonitorBaseline.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::425845004253:role/cdk-hnb659fds-deploy-role-425845004253-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::425845004253:role/cdk-hnb659fds-cfn-exec-role-425845004253-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-425845004253-us-west-2/39716495e6821c2d43a51dffc0b611a1adb36ecd3f139cc33a55ad7ab82c4883.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "HelperMonitorBaseline.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::425845004253:role/cdk-hnb659fds-lookup-role-425845004253-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "HelperMonitorBaseline.assets"
+      ],
+      "metadata": {
+        "/HelperMonitorBaseline/GetS3BucketsIntegRunnerFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetS3BucketsIntegRunnerFunctionServiceRole0DA24409"
+          }
+        ],
+        "/HelperMonitorBaseline/GetS3BucketsIntegRunnerFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetS3BucketsIntegRunnerFunctionServiceRoleDefaultPolicy32181DDD"
+          }
+        ],
+        "/HelperMonitorBaseline/GetS3BucketsIntegRunnerFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetS3BucketsIntegRunnerFunctionD0FA15CE"
+          }
+        ],
+        "/HelperMonitorBaseline/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/HelperMonitorBaseline/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "HelperMonitorBaseline"
+    },
+    "integDefaultTestDeployAssert946684A0.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "integDefaultTestDeployAssert946684A0.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "integDefaultTestDeployAssert946684A0": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "integDefaultTestDeployAssert946684A0.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/2d0fa4896e9b9168ffa627340799613a1da0059197a01be2a805db24c733b2bb.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "integDefaultTestDeployAssert946684A0.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "HelperMonitorBaseline",
+        "MonitorBaselineBucketsQuota",
+        "integDefaultTestDeployAssert946684A0.assets"
+      ],
+      "metadata": {
+        "/integ/DefaultTest/DeployAssert/LambdaInvoke56bee50e2eae7f9be82ae3c9d4e823b8/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaInvoke56bee50e2eae7f9be82ae3c9d4e823b8"
+          }
+        ],
+        "/integ/DefaultTest/DeployAssert/LambdaInvoke56bee50e2eae7f9be82ae3c9d4e823b8/Invoke": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaInvoke56bee50e2eae7f9be82ae3c9d4e823b8Invoke2034E58F"
+          }
+        ],
+        "/integ/DefaultTest/DeployAssert/LambdaInvoke56bee50e2eae7f9be82ae3c9d4e823b8/AssertionResults": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssertionResultsLambdaInvoke56bee50e2eae7f9be82ae3c9d4e823b8"
+          }
+        ],
+        "/integ/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SingletonFunction1488541a7b23466481b69b4408076b81Role37ABCE73"
+          }
+        ],
+        "/integ/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SingletonFunction1488541a7b23466481b69b4408076b81HandlerCD40AE9F"
+          }
+        ],
+        "/integ/DefaultTest/DeployAssert/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/integ/DefaultTest/DeployAssert/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "integ/DefaultTest/DeployAssert"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
