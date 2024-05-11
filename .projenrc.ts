@@ -1,5 +1,5 @@
 import { clickupCdk } from '@time-loop/clickup-projen';
-import { JsonPatch } from 'projen';
+import { JsonPatch, javascript } from 'projen';
 
 const name = 'cdk-s3-buckets-usage-metric-publisher';
 const project = new clickupCdk.ClickUpCdkConstructLibrary({
@@ -12,11 +12,15 @@ const project = new clickupCdk.ClickUpCdkConstructLibrary({
   gitignore: ['.vscode/**'],
   repositoryUrl: `https://github.com/time-loop/${name}.git`,
   projenrcTs: true,
-
+  packageManager: javascript.NodePackageManager.PNPM,
+  pnpmVersion: '9',
   bundledDeps: ['aws-sdk'],
   devDeps: ['@time-loop/clickup-projen', '@aws-cdk/integ-tests-alpha', 'aws-sdk-mock', '@aws-sdk/client-cloudwatch'],
   peerDeps: ['multi-convention-namer'],
 });
+
+// TODO remove aws-sdk v2, allowing us to remove bundledDeps requirement
+project.npmrc.addConfig('node-linker', 'hoisted'); // PNPM support for bundledDeps https://pnpm.io/npmrc#node-linker
 
 // Assume the usInfraDev role
 const build = project.tryFindObjectFile('.github/workflows/build.yml');
