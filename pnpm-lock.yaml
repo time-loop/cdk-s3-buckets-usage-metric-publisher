@@ -22,8 +22,8 @@ importers:
         specifier: ^3.515.0
         version: 3.574.0
       '@time-loop/clickup-projen':
-        specifier: ^1.10.2
-        version: 1.10.2(projen@0.81.10(constructs@10.0.5))
+        specifier: ^1.10.6
+        version: 1.10.6(projen@0.81.10(constructs@10.0.5))
       '@types/jest':
         specifier: ^29.5.12
         version: 29.5.12
@@ -927,8 +927,8 @@ packages:
     resolution: {integrity: sha512-IHk53BVw6MPMi2Gsn+hCng8rFA3ZmR3Rk7GllxDUW9qFJl/hiSvskn7XldkECapQVkIg/1dHpMAxI9xSTaLLSA==}
     engines: {node: '>=14.0.0'}
 
-  '@time-loop/clickup-projen@1.10.2':
-    resolution: {integrity: sha512-eDqniAF3zWpSSIBQhS5GC8bgo9GdV3kbC5htbji8vrB0G5kaNYi9CeD5ERlZdXg94vybr3H47yi9uWm7EZ0QzQ==, tarball: https://npm.pkg.github.com/download/@time-loop/clickup-projen/1.10.2/a3a6f813ecb20fcb5634ccaea4d3faefd07549ac}
+  '@time-loop/clickup-projen@1.10.6':
+    resolution: {integrity: sha512-ItU0Vt0/nJPoDYEiQEPJG0Lt47R1hzXoB7vdkCK/KAeUi283spKBXlJUmaZYOniVJ6g6ntaTffLSCf1MY9gw4A==, tarball: https://npm.pkg.github.com/download/@time-loop/clickup-projen/1.10.6/d0e8ed06b3a6cbabb1007ee0b02e6d368437a3c6}
     engines: {node: '>= 18.17.1'}
     peerDependencies:
       projen: ^0.81.8
@@ -3011,6 +3011,7 @@ packages:
 
   sinon@17.0.2:
     resolution: {integrity: sha512-uihLiaB9FhzesElPDFZA7hDcNABzsVHwr3YfmM9sBllVwab3l0ltGlRV1XhpNfIacNDLGD1QRZNLs5nU5+hTuA==}
+    deprecated: There
 
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
@@ -3305,8 +3306,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@5.5.0-dev.20240511:
-    resolution: {integrity: sha512-HnoXTTVxfe1mVRdcrnw+747CMVQyF4RzrDeDkSKc+e99TE6OqEBXcrorAwwPqvlVFfgSiD34O6XkIcFBH0WJFw==}
+  typescript@5.5.0-dev.20240514:
+    resolution: {integrity: sha512-NccALPZlTF/kDNV2Q071Or2T5CcoAHodWjsKseA4LZKfdqufQzebaQlPuZatC8AgHY2cnQJBcKMCHNFWW9ubpA==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -4832,7 +4833,7 @@ snapshots:
       '@smithy/types': 2.12.0
       tslib: 2.6.2
 
-  '@time-loop/clickup-projen@1.10.2(projen@0.81.10(constructs@10.0.5))':
+  '@time-loop/clickup-projen@1.10.6(projen@0.81.10(constructs@10.0.5))':
     dependencies:
       projen: 0.81.10(constructs@10.0.5)
 
@@ -5591,7 +5592,7 @@ snapshots:
     dependencies:
       semver: 7.6.2
       shelljs: 0.8.5
-      typescript: 5.5.0-dev.20240511
+      typescript: 5.5.0-dev.20240514
 
   electron-to-chromium@1.4.763: {}
 
@@ -7654,7 +7655,7 @@ snapshots:
 
   typescript@5.3.3: {}
 
-  typescript@5.5.0-dev.20240511: {}
+  typescript@5.5.0-dev.20240514: {}
 
   uglify-js@3.17.4:
     optional: true
