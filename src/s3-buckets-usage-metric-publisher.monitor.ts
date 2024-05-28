@@ -1,7 +1,8 @@
 /**
  * The Lambda function resource is managed from s3-buckets-usage-metric-publisher.ts
  */
-import * as AWS from 'aws-sdk';
+import { CloudWatch, PutMetricDataCommand } from '@aws-sdk/client-cloudwatch';
+import { ListBucketsCommand, S3 } from '@aws-sdk/client-s3';
 
 /**
  * Monitor the number of S3 buckets by Lambda functions in an AWS account and publish the metric data to CloudWatch.
@@ -16,33 +17,31 @@ export const monitor = async () => {
     }
 
     // Call the listBuckets API to get a list of all S3 buckets
-    const s3 = new AWS.S3();
-    const { Buckets = [] } = await s3.listBuckets().promise();
+    const s3 = new S3();
+    const { Buckets = [] } = await s3.send(new ListBucketsCommand());
 
     const numberOfBuckets = Buckets.length;
     console.log('Number of S3 buckets:', numberOfBuckets);
 
-    const cloudwatch = new AWS.CloudWatch();
-    const dimensions = [{ Name: 'BucketCount', Value: 'Total' }];
-    const metricData = [
-      {
-        MetricName: 'NumberOfS3GeneralPurposeBuckets',
-        Dimensions: dimensions,
-        Unit: 'Count',
-        Value: numberOfBuckets,
-      },
-    ];
-    const params = {
-      Namespace: cwNamespace,
-      MetricData: metricData,
-    };
-    cloudwatch.putMetricData(params, (err) => {
-      if (err) {
-        throw err;
-      } else {
-        console.log(`Successfully pushed metric data to namespace ${cwNamespace} - ${metricData}`);
-      }
-    });
+    const cloudwatch = new CloudWatch();
+    try {
+      await cloudwatch.send(
+        new PutMetricDataCommand({
+          Namespace: cwNamespace,
+          MetricData: [
+            {
+              MetricName: 'NumberOfS3GeneralPurposeBuckets',
+              Dimensions: [{ Name: 'BucketCount', Value: 'Total' }],
+              Unit: 'Count',
+              Value: numberOfBuckets,
+            },
+          ],
+        }),
+      );
+    } catch (error) {
+      console.error('Error publishing metric data');
+      throw error;
+    }
 
     if (numberOfBuckets === 0) {
       console.log('No results to publish');
