@@ -1,8 +1,10 @@
-import path from 'path';
-import * as AWSMock from 'aws-sdk-mock';
+import { CloudWatchClient, PutMetricDataCommand, PutMetricDataCommandInput } from '@aws-sdk/client-cloudwatch';
+import { ListBucketsCommand, S3Client } from '@aws-sdk/client-s3';
+import { mockClient } from 'aws-sdk-client-mock';
 import { monitor } from '../src/s3-buckets-usage-metric-publisher.monitor';
 
-AWSMock.setSDK(path.resolve('./node_modules/aws-sdk'));
+const s3Mock = mockClient(S3Client);
+const cwMock = mockClient(CloudWatchClient);
 
 // Silence log output
 (['log', 'error'] as jest.FunctionPropertyNames<Required<Console>>[]).forEach((func) =>
@@ -11,23 +13,22 @@ AWSMock.setSDK(path.resolve('./node_modules/aws-sdk'));
 
 describe('monitor', () => {
   beforeEach(() => {
+    cwMock.reset();
+    s3Mock.reset();
+
     process.env.CW_NAMESPACE = 'test-namespace';
-    AWSMock.mock('S3', 'listBuckets', mockListBuckets);
-    AWSMock.mock('CloudWatch', 'putMetricData', (params: AWS.CloudWatch.PutMetricDataInput, callback) => {
-      console.log(params);
-      callback(undefined, {});
-    });
-  });
-
-  afterEach(() => {
-    AWSMock.restore();
-  });
-
-  const mockListBuckets = jest.fn(() => {
-    return { Buckets: [{ Name: 'bucket1' }, { Name: 'bucket2' }, { Name: 'bucket3' }, { Name: 'bucket4' }] };
   });
 
   it('should publish metric data to CloudWatch', async () => {
+    s3Mock.on(ListBucketsCommand).resolves({
+      Buckets: [{ Name: 'bucket1' }, { Name: 'bucket2' }, { Name: 'bucket3' }, { Name: 'bucket4' }],
+    });
+
+    cwMock.on(PutMetricDataCommand).callsFake((params: PutMetricDataCommandInput, callback) => {
+      console.log(params);
+      callback();
+    });
+
     const result = await monitor();
     expect(result).toEqual({ numberOfBuckets: 4 });
   });
@@ -38,13 +39,15 @@ describe('monitor', () => {
   });
 
   it('should log "No results to publish" if there are no results', async () => {
-    AWSMock.remock(
-      'S3',
-      'listBuckets',
-      jest.fn(() => {
-        return { numberOfBuckets: 0 };
-      }),
-    );
+    s3Mock.on(ListBucketsCommand).resolves({
+      Buckets: [],
+    });
+
+    cwMock.on(PutMetricDataCommand).callsFake((params: PutMetricDataCommandInput, callback) => {
+      console.log(params);
+      callback();
+    });
+
     const consoleSpy = jest.spyOn(console, 'log').mockImplementation();
     const result = await monitor();
     expect(result).toEqual({ numberOfBuckets: 0 });
@@ -53,16 +56,17 @@ describe('monitor', () => {
   });
 
   it('should throw an error if there is an error publishing metric data', async () => {
-    AWSMock.remock('CloudWatch', 'putMetricData', (params: AWS.CloudWatch.PutMetricDataInput, callback) => {
-      callback(
-        {
-          code: '1',
-          message: `Intentional mock failure: ${params}`,
-          time: new Date(),
-          name: 'MockECSAWSError',
-        },
-        undefined,
-      );
+    s3Mock.on(ListBucketsCommand).resolves({
+      Buckets: [{ Name: 'bucket1' }, { Name: 'bucket2' }, { Name: 'bucket3' }, { Name: 'bucket4' }],
+    });
+
+    cwMock.on(PutMetricDataCommand).callsFake((params: PutMetricDataCommandInput) => {
+      return Promise.reject({
+        code: '1',
+        message: `Intentional mock failure: ${params}`,
+        time: new Date(),
+        name: 'MockECSAWSError',
+      });
     });
     await expect(monitor()).rejects.toBeDefined();
   });
