@@ -76,8 +76,8 @@ importers:
         specifier: ^1.98.0
         version: 1.98.0
       jsii-docgen:
-        specifier: ^9.2.2
-        version: 9.2.2(jsii-rosetta@5.3.36)
+        specifier: ^10.4.10
+        version: 10.4.10(jsii-rosetta@5.3.36)
       jsii-pacmak:
         specifier: ^1.98.0
         version: 1.98.0(jsii-rosetta@5.3.36)
@@ -1538,7 +1538,7 @@ packages:
     resolution: {integrity: sha512-zHig5N+tPWARooBnb0Zx1MFcdfpyJrfTJ3Y5L+IFvUm8rM74hHz66z0gw0x4tijh5CorKkKUCnW82R2vmpeCRA==}
 
   concat-map@0.0.1:
-    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
+    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
   concat-stream@2.0.0:
     resolution: {integrity: sha512-MWufYdFw53ccGjCA+Ol7XJYpAlW6/prSMzuPOTRnJGcGzuhLn4Scrz7qf6o8bROZ514ltazcIFJZevcfbo0x7A==}
@@ -2527,12 +2527,11 @@ packages:
     engines: {node: '>= 14.17.0'}
     hasBin: true
 
-  jsii-docgen@9.2.2:
-    resolution: {integrity: sha512-QoL0BCGZMU1TxqJ7/RyEVhdKGnE2ZQnay9A35yJ8jkb31qyl6HN8dnAzfrz1ym4VbYtwlSqQ+Occjor8E/uxow==}
-    engines: {node: '>= 16.0.0'}
+  jsii-docgen@10.4.10:
+    resolution: {integrity: sha512-CaFwN3KymrPjh7F4IGD1cwTyMHG29M3C87T8vVqKm9Ef9FVvazm1VtDK+ECe0dNUUfOk8O81sBGTHoRgXngJQQ==}
     hasBin: true
     peerDependencies:
-      jsii-rosetta: ~v1.85.0 || ~5.0.14 || ~5.1.2
+      jsii-rosetta: ^1.85.0 || ~5.0.14 || ~5.1.2 || ~5.2.0 || ~5.3.0 || ~5.4.0
 
   jsii-pacmak@1.98.0:
     resolution: {integrity: sha512-p2H8IbiI3RNIUg+oRcJ9Xu1I7CgJUxCMpUl5IPzWAjz1qzhIKOzlkaAMGJfJZJQtib5kWI2OmZ6xBZScWg16+Q==}
@@ -7352,7 +7351,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  jsii-docgen@9.2.2(jsii-rosetta@5.3.36):
+  jsii-docgen@10.4.10(jsii-rosetta@5.3.36):
     dependencies:
       '@jsii/spec': 1.98.0
       case: 1.6.3
