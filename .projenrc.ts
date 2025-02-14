@@ -6,7 +6,7 @@ const project = new clickupCdk.ClickUpCdkConstructLibrary({
   name,
   author: 'jose-clickup',
   authorAddress: 'jamoroso@clickup.com',
-  cdkVersion: '2.105.0',
+  cdkVersion: '2.178.1',
   defaultReleaseBranch: 'main',
   experimentalIntegRunner: true,
   gitignore: ['.vscode/**'],
