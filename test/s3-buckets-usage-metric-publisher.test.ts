@@ -18,7 +18,7 @@ const createS3BucketsUsageMetricPublisher = function (id: string, props?: S3Buck
   s3BucketsUsageMetricPublisher = new S3BucketsUsageMetricPublisher(
     stack,
     new Namer([id]),
-    props || {} as S3BucketsUsageMetricPublisherProps,
+    props || ({} as S3BucketsUsageMetricPublisherProps),
   );
   template = Template.fromStack(stack);
 };
