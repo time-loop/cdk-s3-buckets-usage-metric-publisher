@@ -57,12 +57,7 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-425845004253-us-west-2",
-     "S3Key": "b7e8e241c3657c5ecfec03155a2576bbb4c2edfcff3b4b5094118a35e8708473.zip"
-    },
-    "Environment": {
-     "Variables": {
-      "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
-     }
+     "S3Key": "8c81212a5b0fed28282b83eec1b1ac2007cebe5d8985ea78b205aac0e7d05e7a.zip"
     },
     "FunctionName": "GetS3BucketsIntegRunnerFunction",
     "Handler": "index.handler",

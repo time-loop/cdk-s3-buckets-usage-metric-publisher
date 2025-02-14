@@ -70,11 +70,10 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-425845004253-us-west-2",
-     "S3Key": "cef134806d3207d033272baa759a1e870efeb9f2f8b99ade4080d40527072f70.zip"
+     "S3Key": "cdb767ffc08c51f38b6f2a5a5a434e1ae68fa8ed6d24e2f99779f132875c73f5.zip"
     },
     "Environment": {
      "Variables": {
-      "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
       "CW_NAMESPACE": "S3GeneralPurposeBucketsUsage"
      }
     },
@@ -213,11 +212,11 @@
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Handler": "index.handler",
-    "Runtime": "nodejs18.x",
+    "Runtime": "nodejs20.x",
     "Timeout": 900,
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-425845004253-us-west-2",
-     "S3Key": "5bc602ecde93c947efe5899ae355f999986a1acbe610b1c0b9c468d738857555.zip"
+     "S3Key": "2819175352ad1ce0dae768e83fc328fb70fb5f10b4a8ff0ccbcb791f02b0716d.zip"
     },
     "Role": {
      "Fn::GetAtt": [
