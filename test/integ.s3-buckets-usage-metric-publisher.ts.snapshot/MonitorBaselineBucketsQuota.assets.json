@@ -1,7 +1,8 @@
 {
-  "version": "39.0.0",
+  "version": "41.0.0",
   "files": {
     "cdb767ffc08c51f38b6f2a5a5a434e1ae68fa8ed6d24e2f99779f132875c73f5": {
+      "displayName": "MonitorBaselineBucketsQuota/monitor/Code",
       "source": {
         "path": "asset.cdb767ffc08c51f38b6f2a5a5a434e1ae68fa8ed6d24e2f99779f132875c73f5",
         "packaging": "zip"
@@ -16,6 +17,7 @@
       }
     },
     "2819175352ad1ce0dae768e83fc328fb70fb5f10b4a8ff0ccbcb791f02b0716d": {
+      "displayName": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code",
       "source": {
         "path": "asset.2819175352ad1ce0dae768e83fc328fb70fb5f10b4a8ff0ccbcb791f02b0716d",
         "packaging": "zip"
@@ -29,7 +31,8 @@
         }
       }
     },
-    "22796264c62576051424ffdf44b4b179214b464b65498653aeca1e52d81f9270": {
+    "a44d1bc7cd5ef5787b656aa5e7f86367a5d58cd748200f592b90a376c265c4b0": {
+      "displayName": "MonitorBaselineBucketsQuota Template",
       "source": {
         "path": "MonitorBaselineBucketsQuota.template.json",
         "packaging": "file"
@@ -37,7 +40,7 @@
       "destinations": {
         "425845004253-us-west-2": {
           "bucketName": "cdk-hnb659fds-assets-425845004253-us-west-2",
-          "objectKey": "22796264c62576051424ffdf44b4b179214b464b65498653aeca1e52d81f9270.json",
+          "objectKey": "a44d1bc7cd5ef5787b656aa5e7f86367a5d58cd748200f592b90a376c265c4b0.json",
           "region": "us-west-2",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::425845004253:role/cdk-hnb659fds-file-publishing-role-425845004253-us-west-2"
         }
