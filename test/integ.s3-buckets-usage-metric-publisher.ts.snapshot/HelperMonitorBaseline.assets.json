@@ -1,7 +1,8 @@
 {
-  "version": "39.0.0",
+  "version": "41.0.0",
   "files": {
     "8c81212a5b0fed28282b83eec1b1ac2007cebe5d8985ea78b205aac0e7d05e7a": {
+      "displayName": "GetS3BucketsIntegRunnerFunction/Code",
       "source": {
         "path": "asset.8c81212a5b0fed28282b83eec1b1ac2007cebe5d8985ea78b205aac0e7d05e7a",
         "packaging": "zip"
@@ -16,6 +17,7 @@
       }
     },
     "0550d627449a7c3c21e3b0f3fc184e7f5a2f7b23ab6f3c068bf3e313fea31e98": {
+      "displayName": "HelperMonitorBaseline Template",
       "source": {
         "path": "HelperMonitorBaseline.template.json",
         "packaging": "file"
