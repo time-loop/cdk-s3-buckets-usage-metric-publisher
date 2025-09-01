@@ -22,8 +22,8 @@ importers:
         specifier: latest
         version: 2.213.0-alpha.0(aws-cdk-lib@2.189.0(constructs@10.0.5))(constructs@10.0.5)
       '@time-loop/clickup-projen':
-        specifier: ^1.19.17
-        version: 1.19.17(projen@0.92.10(constructs@10.0.5))
+        specifier: ^1.19.19
+        version: 1.19.19(projen@0.92.10(constructs@10.0.5))
       '@types/jest':
         specifier: ^29.5.14
         version: 29.5.14
@@ -1130,8 +1130,8 @@ packages:
     resolution: {integrity: sha512-mYqtQXPmrwvUljaHyGxYUIIRI3qjBTEb/f5QFi3A6VlxhpmZd5mWXn9W+qUkf2pVE1Hv3SqxefiZOPGdxmO64A==}
     engines: {node: '>=18.0.0'}
 
-  '@time-loop/clickup-projen@1.19.17':
-    resolution: {integrity: sha512-MwCdSwvO7fPnaR8Km9iwvJ9Lc8YpuDLv4kdEHZr9fnW2fhiaax8Fkzro3jvsyh/s1QbVjckePKHaCky9vZ1f0g==, tarball: https://npm.pkg.github.com/download/@time-loop/clickup-projen/1.19.17/f504f0481c414b340aa6b823364cbaaf93f6a661}
+  '@time-loop/clickup-projen@1.19.19':
+    resolution: {integrity: sha512-LOR4T730BJfbzGBnKdlUigFBs2VbB9d8e7RC/9/fpxju3LQYlBm3RkfOfVJq8yeV2WUjuOZdgYx2wMqHg+8d3g==, tarball: https://npm.pkg.github.com/download/@time-loop/clickup-projen/1.19.19/dc58c952a9bfeb57302665939a4de5f38c0b9542}
     engines: {node: '>= 18.17.1'}
     peerDependencies:
       projen: ^0.92.8
@@ -5838,7 +5838,7 @@ snapshots:
       '@smithy/types': 4.3.2
       tslib: 2.8.1
 
-  '@time-loop/clickup-projen@1.19.17(projen@0.92.10(constructs@10.0.5))':
+  '@time-loop/clickup-projen@1.19.19(projen@0.92.10(constructs@10.0.5))':
     dependencies:
       projen: 0.92.10(constructs@10.0.5)
 
