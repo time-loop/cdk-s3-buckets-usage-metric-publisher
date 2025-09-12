@@ -57,10 +57,10 @@
     "jest": "^29.7.0",
     "jest-junit": "^16",
     "jsii": "~5.8.0",
-    "jsii-diff": "^1.113.0",
+    "jsii-diff": "^1.114.1",
     "jsii-docgen": "^10.5.0",
-    "jsii-pacmak": "^1.113.0",
-    "jsii-release": "^0.2.1013",
+    "jsii-pacmak": "^1.114.1",
+    "jsii-release": "^0.2.1015",
     "jsii-rosetta": "~5.8.0",
     "multi-convention-namer": "0.1.15",
     "prettier": "^3.6.2",
@@ -75,8 +75,8 @@
     "multi-convention-namer": "^0.1.15"
   },
   "dependencies": {
-    "@aws-sdk/client-cloudwatch": "^3.879.0",
-    "@aws-sdk/client-s3": "^3.879.0"
+    "@aws-sdk/client-cloudwatch": "^3.887.0",
+    "@aws-sdk/client-s3": "^3.887.0"
   },
   "bundledDependencies": [
     "@aws-sdk/client-cloudwatch",
