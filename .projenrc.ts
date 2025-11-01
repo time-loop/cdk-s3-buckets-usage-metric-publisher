@@ -13,7 +13,6 @@ const project = new clickupCdk.ClickUpCdkConstructLibrary({
   gitignore: ['.vscode/**'],
   repositoryUrl: `https://github.com/time-loop/${name}.git`,
   projenrcTs: true,
-  packageManager: javascript.NodePackageManager.PNPM,
   bundledDeps: ['@aws-sdk/client-cloudwatch', '@aws-sdk/client-s3'],
   devDeps: ['@time-loop/clickup-projen', '@aws-cdk/integ-tests-alpha', 'aws-sdk-client-mock'],
   peerDeps: ['multi-convention-namer'],
