@@ -2,7 +2,7 @@
 
 * text=auto eol=lf
 *.snap linguist-generated
-/.eslintrc.json linguist-generated
+/.eslintrc.json linguist-generated linguist-language=JSON-with-Comments
 /.gitattributes linguist-generated
 /.github/pull_request_template.md linguist-generated
 /.github/workflows/add-to-project.yml linguist-generated
@@ -27,5 +27,5 @@
 /API.md linguist-generated
 /package.json linguist-generated
 /pnpm-lock.yaml linguist-generated
-/renovate.json5 linguist-generated
-/tsconfig.dev.json linguist-generated
+/renovate.json5 linguist-generated linguist-language=JSON-with-Comments
+/tsconfig.dev.json linguist-generated linguist-language=JSON-with-Comments
